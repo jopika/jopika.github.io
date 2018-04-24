@@ -43,5 +43,48 @@
 // END Contact Information Box
 
 // BEGIN Project Information Box
+.projectBox {
+  display: flex;
+  //border: 0 solid transparent;
+  width: 100%;
+}
+
+.projectBox tr {
+  border: 0 solid transparent;
+}
+
+.projectBox td {
+  border: 0 solid transparent;
+}
+
+.projectBox td {
+  text-align: left;
+  vertical-align: top;
+}
+
+.projectBox td a {
+  padding-left: 10px;
+}
+
+.projectDesc {
+  padding-left: 10px;
+}
+
+.projectImage {
+  flex: 1 1 auto;
+}
+
+.projectDescription {
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.projectIcon {
+  height: auto;
+  width: auto;
+  max-width: 100px;
+  max-height: 100px;
+}
+
 
 // END Project Information Box

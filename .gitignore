@@ -1,3 +1,9 @@
 .idea/*
 private/*
+*.lock
+*.private.*
+_site/*
+_includes/.sass-cache/*
+
+
 

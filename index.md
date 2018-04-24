@@ -4,7 +4,7 @@ title: Jonathan Budiardjo
 ---
 My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at the University of British Columbia
 
-## Contact info
+# Contact info
 <blockquote class="contactBox">
 <table>
     <tr> 
@@ -30,7 +30,33 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 </table>
 </blockquote>
 
-## Personal Projects
+# Personal Projects
+<!--
+<div class="projectBox">
+    <div class="projectImage">
+        <img src="https://raw.githubusercontent.com/jopika/Takane/master/Takane.png">
+    </div>
+    <div class="projectDescription">
+        <div>Hello</div>
+        <div>world!!!<div>
+    </div>
+</div>
+-->
+
+
+<table class="projectBox">
+    <tr>
+        <td></td>
+        <td><a href="https://github.com/jopika/Takane">Takane (Python)</a></td>
+    </tr>
+    <tr>
+        <td><img class="projectIcon" src="https://raw.githubusercontent.com/jopika/Takane/master/Takane.png"></td>
+        <td><div class="projectDesc">A lightweight Discord bot, able to preform automated adminstrative tasks</div></td>
+    </tr>
+</table>
+
+
+
 [Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
 [Animal-bot](www.google.com)
 ## Resume
