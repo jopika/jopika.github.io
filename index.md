@@ -1,4 +1,50 @@
-## Welcome to GitHub Pages
+---
+layout: "front_page"
+title: Jonathan Budiardjo
+---
+My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at the University of British Columbia
+
+## Contact info
+<blockquote class="contactBox">
+<table>
+    <tr> 
+        <td>Email</td>
+        <td><a href="mailto:j.budiardjo@gmail.com">j.budiardjo@gmail.com</a></td> 
+    </tr>
+    <tr>
+        <td>Github</td>
+        <td><a href="https://github.com/jopika">https://github.com/Jopika</a></td>
+    </tr>
+    <tr>
+        <td>Resume</td>
+        <td><a href="https://www.google.com">Hello</a></td>
+    </tr>
+    <tr>
+        <td>LinkedIn</td>
+        <td><a href="https://www.google.com">Hello</a></td>
+    </tr>
+    <tr>
+        <td>Calendar</td>
+        <td><a href="https://www.google.com">Hello</a></td>
+    </tr>
+</table>
+</blockquote>
+
+## Personal Projects
+[Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
+[Animal-bot](www.google.com)
+## Resume
+
+
+```
+This is some kind of code
+```
+
+
+
+
+
+<!-- ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/jopika/jopika.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -35,3 +81,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ -->

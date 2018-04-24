@@ -1,0 +1,47 @@
+
+// BEGIN Contact Information Box
+// Displays the Contact Information nicely
+.contactBox {
+  border-left: 2px solid #00BFFF;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-left: 0;
+  padding-left: 3px;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 40px;
+  -webkit-margin-end: 40px;
+}
+
+// Allows the table to look nice
+.contactBox > table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border: 0 solid transparent;
+}
+
+// Makes the table rows look nice
+.contactBox > table tr {
+  display: table-row-group;
+  vertical-align: center;
+  border: 0 solid transparent;
+}
+
+// Makes it so that the cells are nicely aligned
+.contactBox > table td {
+  text-align: left;
+  border: 0 solid transparent;
+}
+
+// Gives a little space for the links
+.contactBox table tr td a{
+  padding-left: 6px;
+ }
+
+// END Contact Information Box
+
+// BEGIN Project Information Box
+
+// END Project Information Box
