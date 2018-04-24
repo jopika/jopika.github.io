@@ -32,7 +32,7 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 
 ## Personal Projects
 [Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
-[Animal-bot](www.google.com)
+[Animal-bot](https://www.google.com) - Awoo!
 ## Resume
 
 
