@@ -55,7 +55,18 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
     </tr>
 </table>
 
+<table class="projectBox">
+    <tr>
+        <td></td>
+        <td><a href="https://github.com/jopika/Takane">Marksheet Generator (Python)</a></td>
+    </tr>
+    <tr>
+        <td><i class="fi fi-apple"></i></td>
+        <td><div class="projectDesc">A Python program that generates custom marksheets based on given CSV files</div></td>
+    </tr>
+</table>
 
+<i class="fi fi-apple"></i>
 
 [Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
 [Animal-bot](www.google.com)
