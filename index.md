@@ -44,6 +44,29 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 -->
 
 
+<!-- Begin test -->
+
+{% for project in site.data.projects %}
+<table class="projectBox">
+    <tr>
+        <td></td>
+        <td><a href="{{ project.githubLink }}">{{ project.projectName }}</a></td>
+    </tr>
+    <tr>
+        <td><img class="projectIcon" src="{{ project.imgPath }}"></td>
+        <td><div class="projectDesc">{{ project.projectDescription }}</div></td> 
+    </tr>
+</table>
+{% endfor %}
+
+
+<!-- End Test -->
+
+
+
+
+<!-- 
+
 <table class="projectBox">
     <tr>
         <td></td>
@@ -67,9 +90,11 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 </table>
 
 <i class="fi fi-apple"></i>
-
+ -->
+<!-- 
 [Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
-[Animal-bot](www.google.com)
+[Animal-bot](www.google.com) -->
+
 ## Resume
 
 
