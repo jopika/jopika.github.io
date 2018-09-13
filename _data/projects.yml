@@ -1,0 +1,23 @@
+- name: Takane
+  date: 2018
+  link: https://github.com/jopika/Takane
+  language: Python
+  description: A lightweight Discord bot, able to preform automated adminstrative tasks
+
+- name: Ivan Planetary File System
+  date: 2018
+  link: https://github.com/jinichu/Ivan-Planetary-File-System
+  language: GoLang
+  description: A privacy centric, peer-to-peer distributed file system with realtime publish/subscribe messaging system. 
+
+- name: MarksheetGenerator
+  date: 2018
+  link: https://github.com/jopika/MarksheetGenerator
+  language: Python
+  description: Quickly generates marksheets with custom grading rubrics using CSV inputs.
+
+- name: Leap Language
+  date: 2018
+  link: https://github.com/jopika/nwHacks2017-LeapLanguage
+  language: Python
+  description: American Sign Language interpreter using virtual reality sensors.
