@@ -32,10 +32,16 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 
 ## Personal Projects
 
+<div>
+
 {% for project in site.data.projects %}
-    [{{ project.name }}]({{ project.link }}) - {{ project.description}}\\
+<p>
+    <!-- [{{ project.name }}]({{ project.link }}) - {{ project.description }}\\ -->
+    <a href="{{ project.link }}">{{ project.name }}</a>:<span> {{ project.description }}</span> <br>
+</p>
 {% endfor %}
 
+</div>
 
 <!-- [Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
 [Animal-bot](https://www.google.com) - Awoo! -->
