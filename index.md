@@ -32,19 +32,39 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 
 ## Personal Projects
 
-<div>
+<div class="projectSection">
 
 {% for project in site.data.projects %}
-<p>
-    <!-- [{{ project.name }}]({{ project.link }}) - {{ project.description }}\\ -->
-    <a href="{{ project.link }}">{{ project.name }}</a>:<span> {{ project.description }}</span> <br>
-</p>
+{% if project.name != null %}
+<div class="projectBox">
+    <div class="projectImage">
+        {% if project.image != null  %}
+        <img src="{{ project.image }}">
+        {% else %}
+        <img src="http://hdimages.org/wp-content/uploads/2017/03/placeholder-image4.jpg">
+        {% endif %}
+    </div>
+    <div class="projectBody">
+        <!-- <a href="{{ project.link }}">{{ project.name }}</a><span>: {{ project.description }}</span> <br> -->
+        {{ project.name }} - [{{ project.language }}] <br>
+        {% if project.sourceLink != null %}
+            <a href="{{ project.sourceLink }}">Source Code</a>
+        {% endif %}
+        {% if project.liveLink != null %}
+            <a href="{{ project.liveLink }}">Live Site</a>
+        {% endif %}
+        {% if project.sourceLink != null or project.liveLink != null %}
+        <br>
+        {% endif %}
+        {{ project.description }} <br>
+    </div>
+</div>
+{% endif %}
 {% endfor %}
+
 
 </div>
 
-<!-- [Takane (Python)](https://github.com/jopika/Takane) - A lightweight Discord bot, able to preform automated adminstrative tasks\\
-[Animal-bot](https://www.google.com) - Awoo! -->
 ## Resume
 
 

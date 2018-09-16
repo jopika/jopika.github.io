@@ -38,10 +38,38 @@
 // Gives a little space for the links
 .contactBox table tr td a{
   padding-left: 6px;
- }
+}
 
 // END Contact Information Box
 
 // BEGIN Project Information Box
+
+.projectBox {
+  border-left: 2px solid #1fdd87;
+  padding-left: 10px;
+  display: block;
+  // -webkit-margin-before: 1em;
+  // -webkit-margin-after: 1em;
+  // -webkit-margin-start: 40px;
+  // -webkit-margin-end: 40px;
+
+  display: flex;
+  max-height: 100px;
+  min-height: 100px;
+  margin-bottom: 5%;
+
+  overflow: hidden;
+}
+
+.projectBox > .projectImage {
+  max-height: 15%;
+  min-height: 15%;
+  min-width:  15%;
+  max-width:  15%;
+}
+
+.projectBox > .projectBody {
+  margin-left: 10px;
+}
 
 // END Project Information Box
