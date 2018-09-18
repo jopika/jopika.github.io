@@ -2,6 +2,7 @@
 layout: "front_page"
 title: Jonathan Budiardjo
 ---
+{% assign PROJECT_LIMIT = 3 %}
 My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at the University of British Columbia
 
 ## Contact info
@@ -30,12 +31,12 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 </table>
 </blockquote>
 
-## Personal Projects
+## Recent Projects
 
 <div class="projectSection">
-
+{% assign count = 0 %}
 {% for project in site.data.projects %}
-{% if project.name != null %}
+{% if project.name != null and count < PROJECT_LIMIT %}
 <div class="projectBox">
     <div class="projectImage">
         {% if project.image != null  %}
@@ -59,20 +60,18 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
         {{ project.description }} <br>
     </div>
 </div>
+{% assign count = count | plus: 1 %}
 {% endif %}
 {% endfor %}
-
-
 </div>
 
-## Resume
-
-
-```
-This is some kind of code
-```
-
-
+## Recent Posts
+{% for i in (0..site.posts.length) %}
+<!-- <p>
+    {{ site.posts[i].title }} -
+    {{ site.posts[i].excerpt }}
+</p> -->
+{% endfor %}
 
 
 
