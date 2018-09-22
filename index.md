@@ -3,6 +3,7 @@ layout: "front_page"
 title: Jonathan Budiardjo
 ---
 {% assign PROJECT_LIMIT = 3 %}
+{% assign POST_LIMIT = 3 %}
 My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at the University of British Columbia
 
 ## Contact info
@@ -66,11 +67,11 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 </div>
 
 ## Recent Posts
-{% for i in (0..site.posts.length) %}
-<!-- <p>
-    {{ site.posts[i].title }} -
-    {{ site.posts[i].excerpt }}
-</p> -->
+{% for post in site.posts limit:POST_LIMIT %}
+<p>
+    {{ post.title }} -
+    {{ post.excerpt }}
+</p>
 {% endfor %}
 
 
