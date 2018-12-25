@@ -6,7 +6,7 @@ title: Jonathan Budiardjo
 {% assign POST_LIMIT = 3 %}
 My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at the University of British Columbia
 
-## Contact info
+## Contact me
 <blockquote class="contactBox">
 <table>
     <tr> 
@@ -35,6 +35,7 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 ## Recent Projects
 
 <div class="projectSection">
+
 {% assign count = 0 %}
 {% for project in site.data.projects %}
 {% if project.name != null and count < PROJECT_LIMIT %}
@@ -42,6 +43,8 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
     <div class="projectImage">
         {% if project.image != null  %}
         <img src="{{ project.image }}">
+        {% elsif project.icon != null %}
+        <img class="fas {{ project.icon }} fa-6x fa-fw">
         {% else %}
         <img src="http://hdimages.org/wp-content/uploads/2017/03/placeholder-image4.jpg">
         {% endif %}
@@ -64,6 +67,11 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 {% assign count = count | plus: 1 %}
 {% endif %}
 {% endfor %}
+{% if count >= PROJECT_LIMIT %}
+<!-- See more generation -->
+
+{% endif %}
+
 </div>
 
 ## Recent Posts

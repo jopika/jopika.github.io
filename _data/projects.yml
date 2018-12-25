@@ -2,6 +2,7 @@
   language: Python
   date: 2018
   image: https://raw.githubusercontent.com/jopika/Takane/master/Takane.png
+  icon:
   description: A lightweight Discord bot, able to preform automated adminstrative tasks
   sourceLink: https://github.com/jopika/Takane
   liveLink: 
@@ -10,6 +11,7 @@
   language: GoLang
   date: 2018
   image: 
+  icon: fa-globe
   description: A privacy centric, peer-to-peer distributed file system with realtime publish/subscribe messaging system. 
   sourceLink: https://github.com/jinichu/Ivan-Planetary-File-System
   liveLink: 
@@ -18,6 +20,7 @@
   language: Python
   date: 2018
   image: 
+  icon: fa-table
   description: Quickly generates marksheets with custom grading rubrics using CSV inputs.
   sourceLink: https://github.com/jopika/MarksheetGenerator
   liveLink: 
@@ -26,6 +29,7 @@
   language: Python
   date: 2018
   image: https://puu.sh/BvPCH/69f3d012a6.png
+  icon:
   description: American Sign Language interpreter using virtual reality sensors.
   sourceLink: https://github.com/jopika/nwHacks2017-LeapLanguage
   liveLink: 

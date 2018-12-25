@@ -193,3 +193,11 @@ footer a:hover { color: #444; }
 .contactBox > table td { text-align: left; border: 0 solid transparent; }
 
 .contactBox table tr td a { padding-left: 6px; }
+
+.projectBox { border-left: 2px solid #1fdd87; padding-left: 10px; display: block; display: flex; max-height: 100px; min-height: 100px; margin-bottom: 5%; overflow: hidden; }
+
+.projectBox > .projectImage { max-height: 15%; min-height: 15%; min-width: 15%; max-width: 15%; }
+
+.projectBox > .projectImage > svg { margin: auto; }
+
+.projectBox > .projectBody { margin-left: 10px; }

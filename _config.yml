@@ -3,3 +3,6 @@ description: Computer Engineer, Teaching Assistant, and Student
 theme: jekyll-theme-tactile 
 #theme: ./_includes/custom-tactile/
 repository: jopika/jopika.github.io
+
+#sass:
+#  sass_dir: css
