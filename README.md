@@ -46,6 +46,7 @@ Add a new item to `_data/projects.yml`:
 - name: Project Name
   language: TypeScript
   date: 2026
+  weight: 100
   image:
   icon: fa-code
   description: One concise sentence about what the project does.
@@ -53,7 +54,18 @@ Add a new item to `_data/projects.yml`:
   liveLink:
 ```
 
-The homepage currently shows the first three valid project entries from this file. Reorder entries to control what appears in "Recent Projects".
+The homepage sorts projects by `weight` from highest to lowest. Increase a project's weight to move it earlier in the grid.
+
+The project grid is configured in `_config.yml`:
+
+```yml
+project_grid:
+  columns: 3
+  initial_rows: 1
+  reveal_rows: 1
+```
+
+`columns` controls the desktop grid width, `initial_rows` controls how many rows are visible on page load, and `reveal_rows` controls how many rows the "More Projects" button reveals per click.
 
 ## Adding Writing
 

@@ -2,8 +2,12 @@
 layout: "front_page"
 title: Jonathan Budiardjo
 ---
-{% assign PROJECT_LIMIT = 3 %}
 {% assign POST_LIMIT = 3 %}
+{% assign PROJECT_GRID_COLUMNS = site.project_grid.columns | default: 3 %}
+{% assign PROJECT_GRID_INITIAL_ROWS = site.project_grid.initial_rows | default: 1 %}
+{% assign PROJECT_GRID_REVEAL_ROWS = site.project_grid.reveal_rows | default: 1 %}
+{% assign PROJECT_INITIAL_COUNT = PROJECT_GRID_COLUMNS | times: PROJECT_GRID_INITIAL_ROWS %}
+{% assign PROJECT_REVEAL_COUNT = PROJECT_GRID_COLUMNS | times: PROJECT_GRID_REVEAL_ROWS %}
 My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at the University of British Columbia
 
 ## Contact me
@@ -34,45 +38,80 @@ My name is Jonathan Budiardjo, and I'm a Computer Engineer currently studying at
 
 ## Recent Projects
 
-<div class="projectSection">
+<div class="projectSection" style="--project-grid-columns: {{ PROJECT_GRID_COLUMNS }};">
 
-{% assign count = 0 %}
-{% for project in site.data.projects %}
-{% if project.name != null and count < PROJECT_LIMIT %}
-<div class="projectBox">
-    <div class="projectImage">
-        {% if project.image != null  %}
-        <img src="{{ project.image }}">
-        {% elsif project.icon != null %}
-        <img class="fas {{ project.icon }} fa-6x fa-fw">
-        {% else %}
-        <img src="http://hdimages.org/wp-content/uploads/2017/03/placeholder-image4.jpg">
-        {% endif %}
+{% assign sorted_projects = site.data.projects | sort: "weight" | reverse %}
+{% for project in sorted_projects %}
+{% if project.name != null %}
+<article class="projectBox{% if project.image == null or project.image == "" %}{% if project.icon == null or project.icon == "" %} projectBoxNoImage{% endif %}{% endif %}{% if forloop.index > PROJECT_INITIAL_COUNT %} projectBoxHidden{% endif %}" data-project-card data-project-index="{{ forloop.index0 }}">
+    {% assign project_href = "#" %}
+    {% if project.sourceLink != null and project.sourceLink != "" %}
+        {% assign project_href = project.sourceLink %}
+    {% elsif project.liveLink != null and project.liveLink != "" %}
+        {% assign project_href = project.liveLink %}
+    {% endif %}
+    {% if project.image != null and project.image != "" %}
+    <a class="projectImage" href="{{ project_href }}" aria-label="{{ project.name }}">
+        <img src="{{ project.image }}" alt="{{ project.name }} project image">
+    </a>
+    {% elsif project.icon != null and project.icon != "" %}
+    <div class="projectImage projectImageIcon" aria-hidden="true">
+        <i class="fas {{ project.icon }}"></i>
     </div>
+    {% endif %}
     <div class="projectBody">
-        <!-- <a href="{{ project.link }}">{{ project.name }}</a><span>: {{ project.description }}</span> <br> -->
-        {{ project.name }} - [{{ project.language }}] <br>
-        {% if project.sourceLink != null %}
-            <a href="{{ project.sourceLink }}">Source Code</a>
-        {% endif %}
-        {% if project.liveLink != null %}
-            <a href="{{ project.liveLink }}">Live Site</a>
-        {% endif %}
-        {% if project.sourceLink != null or project.liveLink != null %}
-        <br>
-        {% endif %}
-        {{ project.description }} <br>
+        <h3>{{ project.name }}</h3>
+        <div class="projectMeta">
+            {% if project.language != null and project.language != "" %}
+            <span>{{ project.language }}</span>
+            {% endif %}
+            {% if project.liveLink != null and project.liveLink != "" %}
+            <a href="{{ project.liveLink }}">Live</a>
+            {% endif %}
+            {% if project.sourceLink != null and project.sourceLink != "" %}
+            <a class="projectCodeLink" href="{{ project.sourceLink }}" aria-label="{{ project.name }} source code" title="Source code">
+                <i class="fas fa-code-branch" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+        </div>
+        <p>{{ project.description }}</p>
     </div>
-</div>
-{% assign count = count | plus: 1 %}
+</article>
 {% endif %}
 {% endfor %}
-{% if count >= PROJECT_LIMIT %}
-<!-- See more generation -->
-
-{% endif %}
 
 </div>
+
+{% assign project_count = site.data.projects | size %}
+{% if project_count > PROJECT_INITIAL_COUNT %}
+<button class="projectMoreButton" type="button" data-project-more data-project-reveal-count="{{ PROJECT_REVEAL_COUNT }}">
+    More Projects
+</button>
+{% endif %}
+
+<script>
+(function () {
+    var moreButton = document.querySelector('[data-project-more]');
+    if (!moreButton) {
+        return;
+    }
+
+    var revealCount = parseInt(moreButton.getAttribute('data-project-reveal-count'), 10);
+    var hiddenCards = function () {
+        return Array.prototype.slice.call(document.querySelectorAll('[data-project-card].projectBoxHidden'));
+    };
+
+    moreButton.addEventListener('click', function () {
+        hiddenCards().slice(0, revealCount).forEach(function (card) {
+            card.classList.remove('projectBoxHidden');
+        });
+
+        if (hiddenCards().length === 0) {
+            moreButton.remove();
+        }
+    });
+})();
+</script>
 
 ## Recent Posts
 {% for post in site.posts limit:POST_LIMIT %}
