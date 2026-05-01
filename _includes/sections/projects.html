@@ -1,0 +1,67 @@
+{% comment %}
+  Usage (homepage):   {% include sections/projects.html %}
+  Usage (full page):  {% include sections/projects.html show_all=true %}
+{% endcomment %}
+
+{% assign proj_data  = site.data.projects %}
+{% assign proj_limit = site.section_limits.projects %}
+
+<section class="section" id="projects" aria-label="Projects">
+
+  {% if include.show_all %}
+    {% include section_header.html label="// projects" title="Projects" heading="h1" %}
+  {% else %}
+    {% include section_header.html label="// projects" title="Projects" link="/projects/" %}
+  {% endif %}
+
+  <ul class="item-list">
+    {% for item in proj_data %}
+      {% if include.show_all == nil or include.show_all == false %}
+        {% if forloop.index > proj_limit %}{% break %}{% endif %}
+      {% endif %}
+
+      <li class="item-list__entry">
+        <div class="item-list__header">
+          <div class="item-list__left">
+            <span class="item-list__title">
+              {% if item.url %}
+                <a href="{{ item.url }}" class="item-link" target="_blank" rel="noopener">{{ item.name }}</a>
+              {% else %}
+                {{ item.name }}
+              {% endif %}
+            </span>
+            <span class="item-list__subtitle">{{ item.language }}</span>
+          </div>
+          <div class="item-list__right">
+            {% if item.status %}
+              <span class="status-badge status-badge--{{ item.status }}">{{ item.status }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if item.description %}
+          <p class="item-list__desc">{{ item.description }}</p>
+        {% endif %}
+
+        {% if item.tags %}
+          <div class="item-list__tags">
+            {% for tag in item.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </li>
+
+    {% endfor %}
+  </ul>
+
+  {% unless include.show_all %}
+    {% if proj_data.size > proj_limit %}
+      <div class="section-footer">
+        {% assign remaining = proj_data.size | minus: proj_limit %}
+        <a href="/projects/" class="view-all-btn">{{ remaining }} more project{% if remaining != 1 %}s{% endif %} →</a>
+      </div>
+    {% endif %}
+  {% endunless %}
+
+</section>

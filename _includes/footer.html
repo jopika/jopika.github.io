@@ -1,0 +1,18 @@
+<footer class="footer" role="contentinfo">
+  <div class="container footer__inner">
+
+    <span class="footer__name">{{ site.author.name }}</span>
+
+    <div class="footer__links">
+      <a href="mailto:{{ site.author.email }}" class="footer__link">Email</a>
+      <a href="https://github.com/{{ site.author.github }}" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      {% if site.author.resume and site.author.resume != "#" %}
+      <a href="{{ site.author.resume }}" class="footer__link" target="_blank" rel="noopener noreferrer">Resume</a>
+      {% endif %}
+    </div>
+
+    <span class="footer__copy">Built with Jekyll</span>
+
+  </div>
+</footer>

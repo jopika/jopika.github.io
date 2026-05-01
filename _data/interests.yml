@@ -1,0 +1,26 @@
+# -----------------------------------------------
+# Interests — add entries here.
+# Fields:
+#   name        (required)
+#   note        (optional) — short parenthetical
+#   description (optional) — longer blurb
+# -----------------------------------------------
+
+- name: Board Games
+  note:
+  description: >-
+    Researching and playing board games along with some game design analysis.
+    Currently playing Pandemic Season 2.
+
+# - name: Machine Learning Research
+#   note: Reading & following
+#   description: >-
+#     Keeping up with developments in efficient training, inference optimization,
+#     and foundation model architecture. Particular interest in the systems
+#     side of ML research.
+
+# - name: Open Source
+#   note: Contributing & maintaining
+#   description: >-
+#     Believer in open source software. Enjoy both contributing to projects
+#     and building small tools that others find useful.

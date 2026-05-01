@@ -1,0 +1,213 @@
+// -----------------------------------------------
+// Blog post layout
+// -----------------------------------------------
+.post-article {
+    padding-bottom: 96px;
+}
+
+.post-header {
+    padding: 52px 0 32px;
+    border-bottom: 0.5px solid $border-subtle;
+    margin-bottom: 44px;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+
+    .label-text {
+        margin-bottom: 0;
+        display: inline-block;
+    }
+}
+
+.post-date {
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $text-muted;
+    letter-spacing: 0.06em;
+}
+
+.post-title {
+    font-family: $font-serif;
+    font-size: 38px;
+    color: $text-primary;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    font-weight: 400;
+}
+
+.post-description {
+    font-size: 16px;
+    color: $text-secondary;
+    line-height: 1.7;
+}
+
+// -----------------------------------------------
+// Post prose
+// -----------------------------------------------
+.post-content {
+    font-size: 15px;
+    line-height: 1.85;
+    color: $text-secondary;
+
+    h2 {
+        font-family: $font-serif;
+        font-size: 28px;
+        color: $text-primary;
+        font-weight: 400;
+        letter-spacing: -0.3px;
+        margin: 2.5em 0 0.75em;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid $border-subtle;
+    }
+
+    h3 {
+        font-family: $font-serif;
+        font-size: 22px;
+        color: $text-primary;
+        font-weight: 400;
+        margin: 2em 0 0.6em;
+    }
+
+    h4 {
+        font-family: $font-mono;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $accent-green;
+        margin: 1.75em 0 0.5em;
+    }
+
+    p {
+        margin-bottom: 1.3em;
+    }
+
+    a {
+        color: $accent-cyan; // previously $accent-green
+        text-decoration: underline;
+        text-decoration-color: rgba($accent-cyan, 0.3);
+        text-underline-offset: 2px;
+        transition: text-decoration-color 0.15s;
+
+        &:hover {
+            text-decoration-color: $accent-cyan;
+        }
+    }
+
+    // Inline code
+    code {
+        font-family: $font-mono;
+        font-size: 13px;
+        background: $bg-secondary;
+        border: 0.5px solid $border-primary;
+        border-radius: 4px;
+        padding: 2px 6px;
+        color: $accent-green;
+    }
+
+    // Code blocks
+    pre {
+        background: $bg-secondary;
+        border: 0.5px solid $border-primary;
+        border-radius: 8px;
+        padding: 20px 24px;
+        overflow-x: auto;
+        margin: 1.75em 0;
+        position: relative;
+
+        // Gradient top accent on code blocks
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: $gradient-accent;
+            border-radius: 8px 8px 0 0;
+        }
+
+        code {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 13px;
+            color: $text-secondary;
+            line-height: 1.65;
+        }
+    }
+
+    blockquote {
+        border-left: 2px solid $accent-green;
+        padding: 4px 0 4px 20px;
+        color: $text-muted;
+        font-style: italic;
+        margin: 1.5em 0;
+    }
+
+    hr {
+        border: none;
+        border-top: 0.5px solid $border-subtle;
+        margin: 2.5em 0;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5em;
+        margin-bottom: 1.3em;
+
+        li {
+            margin-bottom: 0.45em;
+        }
+    }
+
+    ul {
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+
+    strong {
+        color: $text-primary;
+        font-weight: 500;
+    }
+
+    img {
+        border-radius: 8px;
+        border: 0.5px solid $border-primary;
+        margin: 1.5em 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin: 1.5em 0;
+
+        th {
+            font-family: $font-mono;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: $text-muted;
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 0.5px solid $border-primary;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 0.5px solid $border-subtle;
+            color: $text-secondary;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+// -----------------------------------------------
+// Colors
+// -----------------------------------------------
+$bg-primary: #0e0f11;
+/* $bg-primary: #1a171c; */
+$bg-secondary: #191b21; // was #16181c
+$bg-tertiary: #1c1e24;
+$border-primary: #2e3038; // was #262830
+$border-subtle: #1c1e23;
+
+$text-primary: #f0ece4;
+$text-secondary: #9e9b94;
+$text-muted: #7c8291; // was #4e5158
+$text-label: #62676f; // was #3e4148
+
+$accent-muted-green: #6dba83;
+$accent-green: #4ade80;
+$accent-cyan: #22d3ee;
+$accent-cyan-highlighted: lighten($accent-cyan, 30%);
+$accent-purple: #818cf8;
+
+// -----------------------------------------------
+// Typography
+// -----------------------------------------------
+$font-serif: "DM Serif Display", Georgia, serif;
+$font-mono: "DM Mono", "Fira Code", monospace;
+$font-sans: "Outfit", system-ui, sans-serif;
+
+// -----------------------------------------------
+// Layout
+// -----------------------------------------------
+$container-width: 760px;
+$container-wide: 1100px;
+$nav-height: 60px;
+$section-gap: 72px;
+
+// -----------------------------------------------
+// Gradient
+// -----------------------------------------------
+$gradient-accent: linear-gradient(
+    90deg,
+    #{$accent-green},
+    #{$accent-cyan} 80%,
+    #{$accent-purple}
+);
+
+// -----------------------------------------------
+// Linkout
+// -----------------------------------------------
+$linkout-tag: "↗";
+$linkout-opacity: 0.7;

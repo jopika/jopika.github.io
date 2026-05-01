@@ -1,0 +1,223 @@
+// -----------------------------------------------
+// Section wrapper
+// -----------------------------------------------
+.section {
+    margin-bottom: $section-gap;
+}
+
+// -----------------------------------------------
+// Section header (label + title + optional "View all" link)
+// -----------------------------------------------
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 0.5px solid $border-subtle;
+
+    .label-text {
+        margin-bottom: 4px;
+    }
+}
+
+.section-title {
+    font-family: $font-serif;
+    font-size: 28px;
+    color: $text-primary;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+}
+
+// On full section pages, use h1
+h1.section-title {
+    font-size: 36px;
+}
+
+.view-all {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $accent-cyan;
+    white-space: nowrap;
+    margin-left: 16px;
+    flex-shrink: 0;
+    transition: color 0.15s;
+
+    &:hover {
+        color: $accent-cyan-highlighted;
+    }
+}
+
+// -----------------------------------------------
+// Item list — used by all sections
+// -----------------------------------------------
+.item-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-list__entry {
+    padding: 18px 0 18px 0;
+    border-bottom: 0.5px solid $border-subtle;
+    position: relative;
+    transition: padding-left 0.2s;
+
+    // Accent bar slides in on hover
+    &::before {
+        content: "";
+        position: absolute;
+        left: -18px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: $accent-green;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    // Compact variant (interests)
+    &--compact {
+        padding: 12px 0;
+    }
+}
+
+.item-list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.item-list__left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0; // prevent overflow
+}
+
+.item-list__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.item-list__title {
+    font-size: 15px;
+    font-weight: 500;
+    color: $text-primary;
+    letter-spacing: -0.1px;
+}
+
+.item-list__subtitle {
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $text-muted;
+    letter-spacing: 0.04em;
+}
+
+.item-list__date {
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $text-muted;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.item-list__location {
+    font-family: $font-mono;
+    font-size: 10px;
+    color: $text-label;
+    letter-spacing: 0.03em;
+}
+
+.item-list__desc {
+    font-size: 13px;
+    color: $text-secondary;
+    line-height: 1.7;
+    margin-top: 6px;
+    max-width: 580px;
+}
+
+.item-list__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+// Clickable title links
+.item-link {
+    color: $accent-cyan; // was $text-primary
+    transition: color 0.15s;
+
+    &:hover {
+        color: $accent-cyan-highlighted;
+    }
+}
+
+// "N more →" at bottom of truncated section
+.section-footer {
+    margin-top: 18px;
+    text-align: right;
+}
+
+.view-all-btn {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text-muted;
+    transition: color 0.15s;
+
+    &:hover {
+        color: $accent-cyan-highlighted;
+    }
+}
+
+// Empty state (no posts yet, etc.)
+.empty-state {
+    padding: 40px 0;
+    color: $text-muted;
+
+    .label-text {
+        color: $text-muted;
+    }
+}
+
+// -----------------------------------------------
+// Section pages (full /experience/, /projects/ etc.)
+// -----------------------------------------------
+.section-page {
+    padding: 48px 0 96px;
+}
+
+.section-page__back {
+    margin-bottom: 36px;
+}
+
+.back-link {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text-muted;
+    transition: color 0.15s;
+
+    &:hover {
+        color: $accent-green;
+    }
+}

@@ -1,0 +1,50 @@
+{% comment %}
+  Usage (homepage):   {% include sections/interests.html %}
+  Usage (full page):  {% include sections/interests.html show_all=true %}
+{% endcomment %}
+
+{% assign int_data  = site.data.interests %}
+{% assign int_limit = site.section_limits.interests %}
+
+<section class="section" id="interests" aria-label="Interests">
+
+  {% if include.show_all %}
+    {% include section_header.html label="// interests" title="Interests" heading="h1" %}
+  {% else %}
+    {% include section_header.html label="// interests" title="Interests" link="/interests/" %}
+  {% endif %}
+
+  <ul class="item-list">
+    {% for item in int_data %}
+      {% if include.show_all == nil or include.show_all == false %}
+        {% if forloop.index > int_limit %}{% break %}{% endif %}
+      {% endif %}
+
+      <li class="item-list__entry item-list__entry--compact">
+        <div class="item-list__header">
+          <div class="item-list__left">
+            <span class="item-list__title">{{ item.name }}</span>
+            {% if item.note %}
+              <span class="item-list__subtitle">{{ item.note }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if item.description %}
+          <p class="item-list__desc">{{ item.description }}</p>
+        {% endif %}
+      </li>
+
+    {% endfor %}
+  </ul>
+
+  {% unless include.show_all %}
+    {% if int_data.size > int_limit %}
+      <div class="section-footer">
+        {% assign remaining = int_data.size | minus: int_limit %}
+        <a href="/interests/" class="view-all-btn">{{ remaining }} more →</a>
+      </div>
+    {% endif %}
+  {% endunless %}
+
+</section>

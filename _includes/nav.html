@@ -1,0 +1,24 @@
+<nav class="nav" id="nav" role="navigation" aria-label="Main">
+  <div class="nav__inner container--wide">
+
+    <a href="{{ '/' | relative_url }}" class="nav__logo" aria-label="{{ site.author.name }} — home">
+      <span class="nav__logo-name">{{ site.author.name }}</span>
+      <span class="nav__logo-tag" aria-hidden="true">// eng</span>
+    </a>
+
+    <div class="nav__links" id="nav-links">
+      <a href="{{ '/#about'      | relative_url }}" class="nav__link">About</a>
+      <a href="{{ '/experience/' | relative_url }}" class="nav__link">Experience</a>
+      <a href="{{ '/projects/'   | relative_url }}" class="nav__link">Projects</a>
+      <a href="{{ '/interests/'  | relative_url }}" class="nav__link">Interests</a>
+      <a href="{{ '/blog/'       | relative_url }}" class="nav__link">Blog</a>
+    </div>
+
+    <button class="nav__toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>

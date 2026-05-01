@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(#{$nav-height} + 24px);
+}
+
+body {
+    font-family: $font-sans;
+    background: $bg-primary;
+    color: $text-primary;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// Add a little component to the end to linkout elements
+[target="_blank"]::after {
+    content: $linkout-tag;
+    opacity: $linkout-opacity;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+// -----------------------------------------------
+// Layout containers
+// -----------------------------------------------
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container--wide {
+    max-width: $container-wide;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+// -----------------------------------------------
+// Reusable label (// monospace label above titles)
+// -----------------------------------------------
+.label-text {
+    font-family: $font-mono;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $accent-green;
+    display: block;
+    margin-bottom: 6px;
+}
+
+// -----------------------------------------------
+// Main content wrapper (accounts for fixed nav)
+// -----------------------------------------------
+.main-content {
+    min-height: calc(100vh - #{$nav-height} - 80px);
+    padding-top: $nav-height;
+}

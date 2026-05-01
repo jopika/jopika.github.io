@@ -1,68 +1,34 @@
-- name: Takane
-  language: Python
-  date: 2018
-  weight: 100
-  image: https://raw.githubusercontent.com/jopika/Takane/master/Takane.png
-  icon:
-  description: A lightweight Discord bot, able to perform automated adminstrative tasks to manage server health and also interacts with users.
-  sourceLink: https://github.com/jopika/Takane
-  liveLink:
-
-- name: Ivan Planetary File System
-  language: GoLang
-  date: 2018
-  weight: 90
-  image:
-  icon: fa-globe
-  description: A privacy centric, peer-to-peer distributed file system with realtime publish/subscribe messaging system.
-  sourceLink: https://github.com/jinichu/Ivan-Planetary-File-System
-  liveLink:
-
-- name: MarksheetGenerator
-  language: Python
-  date: 2018
-  weight: 80
-  image:
-  icon: fa-table
-  description: Quickly generates marksheets with custom grading rubrics using CSV inputs.
-  sourceLink: https://github.com/jopika/MarksheetGenerator
-  liveLink:
-
-- name: Leap Language
-  language: Python
-  date: 2018
-  weight: 70
-  image: #https://puu.sh/BvPCH/69f3d012a6.png
-  icon:
-  description: American Sign Language interpreter using virtual reality sensors.
-  sourceLink: https://github.com/jopika/nwHacks2017-LeapLanguage
-  liveLink:
-
-- name: ToontownHelper
-  language: Typescript
-  date: 2025-Ongoing
-  weight: 105
-  image:
-  icon:
-  description: A room-based application that collects Toontown quest data and shares with friends to make collaborations easier!
-  sourceLink: https://github.com/jopika/ToontownHelper
-  liveLink:
+# -----------------------------------------------
+# Projects — add entries here.
+# Fields:
+#   name        (required)
+#   language    (required) — primary language or stack
+#   status      (optional) — active | wip | archived
+#   url         (optional) — link to repo or live site
+#   description (optional)
+#   tags        (optional)
+# -----------------------------------------------
 
 - name: PRFlow
   language: Python
-  date: 2026-Ongoing
-  weight: 106
-  image:
-  icon:
-  description: A CLI tool that automates the entire PR preparation workflow. Verifying branch safety, rebasing latest changes, and generating Github PRs using custom defined templates all in one command.
-  sourceLink: https://github.com/jopika/PRFlow
-  liveLink:
-# - name:
-#   language:
-#   date:
-#   weight:
-#   image:
-#   icon:
-#   description:
-#   sourceLink:
-#   liveLink:
+  status: active
+  url: https://github.com/Jopika/PRFlow
+  description: >-
+    A CLI tool that automates the entire PR preparation workflow - verifying,
+    formatting, and submitting pull requests with minimal friction.
+  tags:
+    - CLI
+    - Developer Tools
+    - Automation
+
+- name: ToontownHelper
+  language: TypeScript
+  status: active
+  url: https://github.com/Jopika/ToontownHelper
+  description: >-
+    A room-based web application for coordinating Toontown Online gameplay.
+    Helps players manage tasks and strategies in real time.
+  tags:
+    - Web App
+    - Realtime
+    - Gaming

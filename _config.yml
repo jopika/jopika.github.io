@@ -1,21 +1,46 @@
 title: Jonathan Budiardjo
-description: Computer Engineer, Teaching Assistant, and Student
-theme: jekyll-theme-tactile 
-#theme: ./_includes/custom-tactile/
+tagline: "Software Engineer — ML Infrastructure & Realtime Services"
+description: >-
+  Software engineer specializing in end-to-end machine learning infrastructure
+  and realtime services.
+url: "https://jopika.github.io"
+baseurl: ""
+
 repository: jopika/jopika.github.io
 
-project_grid:
-  columns: 3
-  initial_rows: 1
-  reveal_rows: 1
+author:
+  name: Jonathan Budiardjo
+  email: j.budiardjo@gmail.com
+  github: "Jopika"
+  linkedin: jonathan-budiardjo
+  resume: "#" # replace with your resume URL
+  calendar: "https://calendar.app.google/M7iERvv3Z4ownEvC9" # replace with your calendar link
+
+# -----------------------------------------------
+# How many items each section shows on the homepage.
+# Also has a "View all" to see the full list.
+# -----------------------------------------------
+section_limits:
+  experience: 2
+  projects: 3
+  interests: 4
+  posts: 3
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 exclude:
-  - AGENTS.md
-  - README.md
   - Gemfile
   - Gemfile.lock
+  - .gitignore
+  - node_modules
+  - AGENTS.md
+  - README.md
   - private/
   - vendor/
-
-#sass:
-#  sass_dir: css

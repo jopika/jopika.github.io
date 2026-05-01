@@ -1,0 +1,114 @@
+// -----------------------------------------------
+// Tags (tech stack labels)
+// -----------------------------------------------
+/* .tag {
+  font-family: $font-mono;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-muted;
+  background: $bg-secondary;
+  border: 0.5px solid $border-primary;
+  border-radius: 4px;
+  padding: 3px 8px;
+} */
+.tag {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $accent-muted-green;
+    background: rgba($accent-green, 0.06);
+    border: 0.5px solid rgba($accent-green, 0.2);
+    border-radius: 4px;
+    padding: 3px 8px;
+}
+
+// -----------------------------------------------
+// Status badges (active / archived / wip)
+// -----------------------------------------------
+.status-badge {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+
+    &--active {
+        color: $accent-green;
+        background: rgba($accent-green, 0.08);
+        border: 0.5px solid rgba($accent-green, 0.25);
+    }
+
+    &--wip {
+        color: $accent-cyan;
+        background: rgba($accent-cyan, 0.08);
+        border: 0.5px solid rgba($accent-cyan, 0.25);
+    }
+
+    &--archived {
+        color: $text-muted;
+        background: $bg-secondary;
+        border: 0.5px solid $border-primary;
+    }
+}
+
+// -----------------------------------------------
+// Footer
+// -----------------------------------------------
+.footer {
+    border-top: 0.5px solid $border-subtle;
+    padding: 24px 0;
+    margin-top: 24px;
+}
+
+.footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.footer__name {
+    font-family: $font-serif;
+    font-size: 14px;
+    color: $text-muted;
+}
+
+.footer__links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__link {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $text-muted;
+    transition: color 0.15s;
+
+    &:hover {
+        color: $accent-cyan-highlighted;
+    }
+}
+
+.footer__copy {
+    font-family: $font-mono;
+    font-size: 10px;
+    color: $text-label;
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 500px) {
+    .footer__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer__copy {
+        display: none;
+    }
+}

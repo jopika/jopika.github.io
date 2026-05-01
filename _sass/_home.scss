@@ -1,0 +1,106 @@
+// -----------------------------------------------
+// About / Hero (homepage top section)
+// -----------------------------------------------
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: start;
+    padding: 72px 0 60px;
+    border-bottom: 0.5px solid $border-subtle;
+    margin-bottom: $section-gap;
+}
+
+.about-name {
+    font-family: $font-serif;
+    font-size: 46px;
+    color: $text-primary;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.about-tagline {
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $text-muted;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.about-divider {
+    height: 0.5px;
+    background: $border-subtle;
+    margin-bottom: 22px;
+}
+
+.about-bio {
+    font-size: 15px;
+    color: $text-secondary;
+    line-height: 1.8;
+}
+
+// Right column
+.about-aside {
+    border-left: 1px solid $border-primary;
+    padding-left: 28px;
+    padding-top: 20px; // visual alignment after label-text on the left
+}
+
+.about-aside-text {
+    font-size: 13px;
+    color: $text-muted;
+    line-height: 1.75;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.about-contact-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-chip {
+    font-family: $font-mono;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: $accent-cyan;
+    border: 0.5px solid $border-primary;
+    border-radius: 4px;
+    padding: 6px 10px;
+    text-align: center;
+    transition:
+        color 0.15s,
+        border-color 0.15s;
+
+    &:hover {
+        color: $accent-cyan;
+        border-color: rgba($accent-cyan, 0.35);
+        background-color: rgba($accent-cyan-highlighted, 0.1);
+    }
+}
+
+// -----------------------------------------------
+// Responsive
+// -----------------------------------------------
+@media (max-width: 640px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 48px 0 48px;
+    }
+
+    .about-aside {
+        border-left: none;
+        padding-left: 0;
+        border-top: 0.5px solid $border-primary;
+        padding-top: 24px;
+    }
+
+    .about-name {
+        font-size: 34px;
+    }
+}

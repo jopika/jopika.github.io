@@ -1,0 +1,13 @@
+# Drop your posts here as YYYY-MM-DD-title.md files.
+# Example filename: 2025-01-15-my-first-post.md
+#
+# Each post needs front matter at the top:
+#
+# ---
+# layout: post
+# title: "My Post Title"
+# description: "A short one-liner that appears in the post list."
+# date: 2025-01-15
+# ---
+#
+# Then write your post content in Markdown below the front matter.

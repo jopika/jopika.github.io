@@ -1,0 +1,63 @@
+{% comment %}
+  Usage (homepage):   {% include sections/posts.html %}
+  Usage (full page):  {% include sections/posts.html show_all=true %}
+{% endcomment %}
+
+{% assign posts_limit = site.section_limits.posts %}
+
+<section class="section" id="blog" aria-label="Blog Posts">
+
+  {% if include.show_all %}
+    {% include section_header.html label="// writing" title="Posts" heading="h1" %}
+  {% else %}
+    {% include section_header.html label="// writing" title="Posts" link="/blog/" %}
+  {% endif %}
+
+  {% if site.posts.size > 0 %}
+    <ul class="item-list">
+      {% for post in site.posts %}
+        {% if include.show_all == nil or include.show_all == false %}
+          {% if forloop.index > posts_limit %}{% break %}{% endif %}
+        {% endif %}
+
+        <li class="item-list__entry">
+          <div class="item-list__header">
+            <div class="item-list__left">
+              <a href="{{ post.url | relative_url }}" class="item-link item-list__title">{{ post.title }}</a>
+              {% if post.description %}
+                <span class="item-list__subtitle">{{ post.description }}</span>
+              {% endif %}
+            </div>
+            <div class="item-list__right">
+              <time class="item-list__date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%b %-d, %Y" }}
+              </time>
+            </div>
+          </div>
+
+          {% if post.excerpt %}
+            <p class="item-list__desc">
+              {{ post.excerpt | strip_html | normalize_whitespace | truncatewords: 28 }}
+            </p>
+          {% endif %}
+        </li>
+
+      {% endfor %}
+    </ul>
+
+    {% unless include.show_all %}
+      {% if site.posts.size > posts_limit %}
+        <div class="section-footer">
+          {% assign remaining = site.posts.size | minus: posts_limit %}
+          <a href="/blog/" class="view-all-btn">{{ remaining }} more post{% if remaining != 1 %}s{% endif %} →</a>
+        </div>
+      {% endif %}
+    {% endunless %}
+
+  {% else %}
+    <div class="empty-state">
+      <span class="label-text">Nothing here yet — posts coming soon.</span>
+    </div>
+  {% endif %}
+
+</section>

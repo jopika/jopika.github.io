@@ -1,0 +1,57 @@
+<section class="section" id="about" aria-label="About">
+  <div class="about-grid">
+    <div class="about-main">
+      <span class="label-text">// about</span>
+      <h1 class="about-name">{{ site.author.name }}</h1>
+      <p class="about-tagline">{{ site.tagline }}</p>
+      <div class="about-divider"></div>
+      <p class="about-bio">{{ site.data.about.bio }}</p>
+    </div>
+
+    <div class="about-aside">
+      <p class="about-aside-text">{{ site.data.about.aside }}</p>
+      <div class="about-contact-mini">
+        {% if site.author.email and site.author.email != "#" %}
+        <a href="mailto:{{ site.author.email }}" class="contact-chip">Email</a>
+        {% endif %}
+        {% if site.author.github and site.author.github != "#" %}
+        <a
+          href="https://github.com/{{ site.author.github }}"
+          class="contact-chip"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+        {% endif %}
+        {% if site.author.linkedin and site.author.linkedin != "#" %}
+        <a
+          href="https://linkedin.com/in/{{ site.author.linkedin }}"
+          class="contact-chip"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        {% endif %}
+        {% if site.author.resume and site.author.resume != "#" %}
+        <a
+          href="{{ site.author.resume }}"
+          class="contact-chip"
+          target="_blank"
+          rel="noopener"
+          >Resume</a
+        >
+        {% endif %}
+        {% if site.author.calendar and site.author.calendar != "#"
+        %}
+        <a
+          href="{{ site.author.calendar }}"
+          class="contact-chip"
+          target="_blank"
+          rel="noopener"
+          >Calendar</a
+        >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

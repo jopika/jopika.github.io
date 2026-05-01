@@ -1,0 +1,33 @@
+{% comment %}
+  Usage:
+    {% include section_header.html
+       label="// experience"
+       title="Work History"
+       link="/experience/"
+       heading="h2"
+    %}
+
+  Parameters:
+    label   — monospace label shown above the title (e.g. "// experience")
+    title   — section title text
+    link    — optional "View all" href; omit on full section pages
+    heading — "h1" or "h2" (default: h2)
+{% endcomment %}
+
+<div class="section-header">
+  <div class="section-header__meta">
+    {% if include.label %}
+      <span class="label-text">{{ include.label }}</span>
+    {% endif %}
+
+    {% if include.heading == "h1" %}
+      <h1 class="section-title">{{ include.title }}</h1>
+    {% else %}
+      <h2 class="section-title">{{ include.title }}</h2>
+    {% endif %}
+  </div>
+
+  {% if include.link %}
+    <a href="{{ include.link }}" class="view-all">View all →</a>
+  {% endif %}
+</div>

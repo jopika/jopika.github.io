@@ -1,0 +1,42 @@
+# -----------------------------------------------
+# Work experience — add entries here.
+# They appear in the order listed below.
+# Fields:
+#   company     (required)
+#   role        (required)
+#   start       (required) — year or "Month YYYY"
+#   end         (optional) — omit for "Present"
+#   location    (optional)
+#   description (optional)
+#   tags        (optional) — list of tech/skills
+# -----------------------------------------------
+
+- company: Redfin - Applied Machine Learning Group
+  role: Senior Software Engineer
+  start: "June 2025"
+  location: Seattle, WA
+  description: >-
+    Led development for a parameterizable end-to-end ML training pipeline to reduce science iteration cycle length by 60%.
+  tags:
+    - Python
+    - Kubernetes
+    - Apache Spark
+    - Airflow
+    - AWS
+
+- company: Amazon - Prime Video Recommendations
+  role: Software Development Engineer II
+  start: "July 2020"
+  end: "July 2025"
+  location: Seattle, WA
+  description: >-
+    Built high-scale ML infrastructure to deliver personalized recommendations for millions of users.
+    I specialized in briding the gap between research and production, architecting scalable platforms that helped cut model
+    iteration time by 50%, while manging the rigorous latency and availability demands of global content reranking.
+    I also led cross-functional initiatives that drove large lifts in customer engagement, and mentored mutliple engineers.
+  tags:
+    - Java
+    - Scala
+    - Kotlin
+    - Apache Spark
+    - AWS

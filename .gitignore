@@ -11,9 +11,13 @@ vendor/cache/
 *.gem
 Gemfile.lock.local
 
-# Private local context
+# Private local context and random agent files
 AGENTS.md
+CLAUDE.md
+CODEX.md
+COPILOT.md
 private/
+*.private
 
 # Editor and OS files
 .idea/
