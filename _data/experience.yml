@@ -17,12 +17,15 @@
   location: Seattle, WA
   description: >-
     Led development for a parameterizable end-to-end ML training pipeline to reduce science iteration cycle length by 60%.
+    Designed and launched a bandit threshold recommendation system that optimized email and notification sends, reduced
+    user notification fatigue, and drove a 17% lift in CTR.
   tags:
     - Python
     - Kubernetes
     - Apache Spark
     - Airflow
     - AWS
+    - Kafka
 
 - company: Amazon - Prime Video Recommendations
   role: Software Development Engineer II
@@ -31,7 +34,7 @@
   location: Seattle, WA
   description: >-
     Built high-scale ML infrastructure to deliver personalized recommendations for millions of users.
-    I specialized in briding the gap between research and production, architecting scalable platforms that helped cut model
+    Specialized in briding the gap between research and production, architecting scalable platforms that helped cut model
     iteration time by 50%, while manging the rigorous latency and availability demands of global content reranking.
     I also led cross-functional initiatives that drove large lifts in customer engagement, and mentored mutliple engineers.
   tags:

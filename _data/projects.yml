@@ -3,7 +3,7 @@
 # Fields:
 #   name        (required)
 #   language    (required) — primary language or stack
-#   status      (optional) — active | wip | archived
+#   status      (optional) — active | wip | maintenance | archived
 #   url         (optional) — link to repo or live site
 #   description (optional)
 #   tags        (optional)
@@ -38,7 +38,7 @@
   status: maintenance
   url: https://github.com/jopika/Takane
   description: >-
-    A lightweight Discord bot, able to perform automated adminstrative tasks to manage server health and also interacts with users.
+    A lightweight Discord bot, able to perform automated administrative tasks to manage server health and also interacts with users.
   tags:
     - Automation
     - Chatbot
@@ -51,7 +51,7 @@
   description: A privacy centric, peer-to-peer distributed file system with realtime publish/subscribe messaging system.
   tags:
     - P2P
-    - Ipfs
+    - IPFS
     - Privacy
     - Pubsub
 

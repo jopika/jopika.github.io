@@ -30,7 +30,8 @@
             </div>
             <div class="item-list__right">
               <time class="item-list__date" datetime="{{ post.date | date_to_xmlschema }}">
-                {{ post.date | date: "%b %-d, %Y" }}
+                {{ post.date | date: "%Y-%m-%d" }}
+                <!--{{ post.date | date: "%b %-d, %Y" }}-->
               </time>
             </div>
           </div>
