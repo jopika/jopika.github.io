@@ -3,6 +3,8 @@ layout: post
 title: "Revamping the site"
 description: "The struggles of a non-designer trying to make something look nice."
 date: 2026-05-01
+tags:
+  - personal
 ---
 It's hard to do things well, and that's doubly true when you are an engineer that doesn't have any design experience.
 

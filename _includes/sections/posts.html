@@ -16,6 +16,9 @@
   {% if site.posts.size > 0 %}
     <ul class="item-list">
       {% for post in site.posts %}
+        {% if post.tags contains "draft" %}
+          {% continue %}
+        {% endif %}
         {% if include.show_all == nil or include.show_all == false %}
           {% if forloop.index > posts_limit %}{% break %}{% endif %}
         {% endif %}

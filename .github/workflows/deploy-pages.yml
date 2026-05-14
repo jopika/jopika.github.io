@@ -1,0 +1,81 @@
+# deploy-pages.yml
+# Simple workflow that will, when triggered, clone the private repo target, bundles _post files
+# and then publish all non-draft/private posts.
+name: Build and Deploy Pages
+
+on:
+  # Triggers when you push changes to the public repo
+  push:
+    branches: ["main"]
+  # Enable manual triggering via actions
+  workflow_dispatch:
+  # Triggers when it receives a ping from the private repository
+  repository_dispatch:
+    types: [content-updated]
+
+env:
+  PRIVATE_REPO: jopika/blog-src
+  PRIVATE_CONTENT_PATH: private-content
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Public Repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Private Content Repository
+        uses: actions/checkout@v4
+        with:
+          repository: $PRIVATE_REPO
+          token: ${{ secrets.GH_PAGES_PAT }}
+          path: $PRIVATE_CONTENT_PATH # Clones into a temporary folder
+
+      - name: Merge Content
+        run: |
+          # Create the _posts folder in the public repo if it doesn't exist
+          mkdir -p _posts
+
+          # Copy only the contents of the private _posts folder to the public _posts folder
+          # We specifically ignore _drafts here so they are never built
+          cp -r $PRIVATE_CONTENT_PATH/_posts/* _posts/ || echo "No posts to copy"
+
+          # Delete the private-content folder so it doesn't accidentally end up in the site build
+          rm -rf $PRIVATE_CONTENT_PATH
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      # NOTE: This assumes we are using Jekyll. If we are using Hugo, Next.js,
+      # or something else, replace this step with the appropriate build command.
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
