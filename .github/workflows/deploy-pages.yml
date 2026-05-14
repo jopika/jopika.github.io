@@ -39,9 +39,9 @@ jobs:
       - name: Checkout Private Content Repository
         uses: actions/checkout@v4
         with:
-          repository: $PRIVATE_REPO
+          repository: ${{ env.VARIABLE_NAME }}
           token: ${{ secrets.GH_PAGES_PAT }}
-          path: $PRIVATE_CONTENT_PATH # Clones into a temporary folder
+          path: ${{ env.PRIVATE_CONTENT_PATH }} # Clones into a temporary folder
 
       - name: Merge Content
         run: |
@@ -56,7 +56,7 @@ jobs:
           rm -rf $PRIVATE_CONTENT_PATH
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       # NOTE: This assumes we are using Jekyll. If we are using Hugo, Next.js,
       # or something else, replace this step with the appropriate build command.
@@ -78,4 +78,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
