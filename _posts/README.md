@@ -10,6 +10,8 @@
 # title: "My Post Title"
 # description: "A short one-liner that appears in the post list."
 # date: 2025-01-15
+# tags:
+#   - sampleTag
 # ---
 #
 # Then write your post content in Markdown below the front matter.
