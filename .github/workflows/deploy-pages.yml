@@ -39,20 +39,23 @@ jobs:
       - name: Checkout Private Content Repository
         uses: actions/checkout@v4
         with:
-          repository: ${{ env.VARIABLE_NAME }}
+          repository: ${{ env.PRIVATE_REPO }}
           token: ${{ secrets.GH_PAGES_PAT }}
           path: ${{ env.PRIVATE_CONTENT_PATH }} # Clones into a temporary folder
 
       - name: Merge Content
         run: |
           # Create the _posts folder in the public repo if it doesn't exist
+          echo "Preparing _posts folder (in case it doesn't exist)"
           mkdir -p _posts
 
           # Copy only the contents of the private _posts folder to the public _posts folder
           # We specifically ignore _drafts here so they are never built
+          echo "Copying from $PRIVATE_CONTENT_PATH"
           cp -r $PRIVATE_CONTENT_PATH/_posts/* _posts/ || echo "No posts to copy"
 
           # Delete the private-content folder so it doesn't accidentally end up in the site build
+          echo "Cleaning up $PRIVATE_CONTENT_PATH"
           rm -rf $PRIVATE_CONTENT_PATH
 
       - name: Setup GitHub Pages
