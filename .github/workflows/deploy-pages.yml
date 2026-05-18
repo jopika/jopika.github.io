@@ -7,6 +7,11 @@ on:
   # Triggers when you push changes to the public repo
   push:
     branches: ["main"]
+    paths-ignore:
+      - README.md
+      - .codebook.toml
+      - .gitignore
+
   # Enable manual triggering via actions
   workflow_dispatch:
   # Triggers when it receives a ping from the private repository
@@ -52,7 +57,11 @@ jobs:
           # Copy only the contents of the private _posts folder to the public _posts folder
           # We specifically ignore _drafts here so they are never built
           echo "Copying from $PRIVATE_CONTENT_PATH"
-          cp -r $PRIVATE_CONTENT_PATH/_posts/* _posts/ || echo "No posts to copy"
+          cp -r $PRIVATE_CONTENT_PATH/_posts/* _posts/ || echo "No private posts to copy"
+
+          # Copy private media into Jekyll public media paths
+          mkdir -p media
+          cp -r $PRIVATE_CONTENT_PATH/media/* media/ || echo "No private media to copy"
 
           # Delete the private-content folder so it doesn't accidentally end up in the site build
           echo "Cleaning up $PRIVATE_CONTENT_PATH"

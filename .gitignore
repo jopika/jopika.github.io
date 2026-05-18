@@ -24,3 +24,6 @@ private/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Local mirror of private blog media
+media/

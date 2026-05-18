@@ -1,6 +1,6 @@
 # Jonathan Budiardjo Personal Site
 
-Personal portfolio and blog for Jonathan Budiardjo, built with
+My very own personal portfolio and blog, built with
 [Jekyll](https://jekyllrb.com/) and hosted with GitHub Pages.
 
 The site is intentionally data-driven: most homepage and section content lives
@@ -51,7 +51,6 @@ The generated site is written to `_site/`, which is not committed.
 | `_layouts/section.html` | Shared layout for full section pages |
 | `_layouts/post.html` | Blog post layout |
 | `_sass/` | Sass partials imported by `assets/css/main.scss` |
-| `_posts/` | Blog posts in Markdown |
 | `assets/js/main.js` | Mobile navigation and active link behavior |
 | `experience.html`, `projects.html`, `interests.html`, `blog/index.html` | Full listing pages |
 
