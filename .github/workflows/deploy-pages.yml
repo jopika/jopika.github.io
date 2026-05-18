@@ -7,6 +7,7 @@ on:
   # Triggers when you push changes to the public repo
   push:
     branches: ["main"]
+    # Add files here to prevent changes to these files in triggering the build
     paths-ignore:
       - README.md
       - .codebook.toml
@@ -18,11 +19,12 @@ on:
   repository_dispatch:
     types: [content-updated]
 
+# Modify these environment variables to point to the right repository
 env:
   PRIVATE_REPO: jopika/blog-src
   PRIVATE_CONTENT_PATH: private-content
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN/GH_PAGES_PAT to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
